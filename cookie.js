@@ -14,7 +14,7 @@
 	expiredays = 1*24*60*60
 	$.setCookie=function(c_name,value,expiredays){
 		var exdate=new Date()
-		exdate.setDate(exdate.getDate()+expiredays)
+		exdate.setDate(exdate.getTime()+expiredays)
 		document.cookie=c_name+ "=" +stringifyCookieValue(value)+
 		((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
 	};
