@@ -11,7 +11,7 @@
 		return encode(typeof value !== 'string' ? JSON.stringify(value) : String(value));
 	}
 	//设置cookie值内容
-	expiredays = 1*24*60*60
+	expiredays = 60*60*1000 //cookie时间以小时为单位
 	$.setCookie=function(c_name,value,expiredays){
 		var exdate=new Date()
 		exdate.setDate(exdate.getTime()+expiredays)
