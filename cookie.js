@@ -11,10 +11,10 @@
 		return encode(typeof value !== 'string' ? JSON.stringify(value) : String(value));
 	}
 	//设置cookie值内容
-	expiredays = 60*60*1000 //cookie时间以小时为单位
+	expiredays = 2 //cookie时间默认2小时，以小时为单位
 	$.setCookie=function(c_name,value,expiredays){
 		var exdate=new Date()
-		exdate.setDate(exdate.getTime()+expiredays)
+		exdate.setDate(exdate.getTime()+expiredays*60*60*1000)
 		document.cookie=c_name+ "=" +stringifyCookieValue(value)+
 		((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
 	};
